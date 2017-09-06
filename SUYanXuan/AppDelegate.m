@@ -11,6 +11,7 @@
 #import "SUHomeVC.h"
 #import "SURecommendVC.h"
 #import "SUCatagoriesVC.h"
+#import "SUCartVC.h"
 
 @interface AppDelegate ()
 
@@ -22,7 +23,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    UIViewController *vc = [[SUCatagoriesVC alloc] init];
+    UIViewController *vc = [[SUCartVC alloc] init];
     SUHomeNavigationVC *homeNavigationVC = [[SUHomeNavigationVC alloc] initWithRootViewController:vc];
     self.window.rootViewController = homeNavigationVC;
     [self.window makeKeyAndVisible];
