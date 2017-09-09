@@ -19,4 +19,18 @@
     return imageManager;
 }
 
+- (void)setImageView:(UIImageView *)imageView withUrl:(NSString *)url {
+    if([self objectForKey:url]) {
+        imageView.image = [self objectForKey:url];
+    }else {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:url]]];
+            [self setObject:image forKey:url];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                imageView.image = image;
+            });
+        });
+
+    }
+}
 @end

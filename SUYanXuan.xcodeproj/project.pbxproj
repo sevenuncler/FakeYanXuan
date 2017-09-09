@@ -69,6 +69,9 @@
 		87984FBF1F60C483008DEACD /* SUBasicProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87984FBE1F60C483008DEACD /* SUBasicProfileView.m */; };
 		87984FC21F60C82F008DEACD /* SUBasicProfileItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 87984FC11F60C82F008DEACD /* SUBasicProfileItem.m */; };
 		87984FC91F620B6A008DEACD /* UIImage+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 87984FC81F620B6A008DEACD /* UIImage+Size.m */; };
+		87984FCC1F620EAD008DEACD /* SUThemeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 87984FCB1F620EAD008DEACD /* SUThemeCell.m */; };
+		87984FCF1F6213A7008DEACD /* SUThemeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 87984FCE1F6213A7008DEACD /* SUThemeVC.m */; };
+		87984FD21F62146A008DEACD /* SUThemeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 87984FD11F62146A008DEACD /* SUThemeItem.m */; };
 		87BD7A061F4BAC82007F53F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 87BD7A051F4BAC82007F53F0 /* main.m */; };
 		87BD7A091F4BAC82007F53F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 87BD7A081F4BAC82007F53F0 /* AppDelegate.m */; };
 		87BD7A0F1F4BAC82007F53F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87BD7A0D1F4BAC82007F53F0 /* Main.storyboard */; };
@@ -179,6 +182,12 @@
 		87984FC11F60C82F008DEACD /* SUBasicProfileItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUBasicProfileItem.m; sourceTree = "<group>"; };
 		87984FC71F620B6A008DEACD /* UIImage+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Size.h"; sourceTree = "<group>"; };
 		87984FC81F620B6A008DEACD /* UIImage+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Size.m"; sourceTree = "<group>"; };
+		87984FCA1F620EAD008DEACD /* SUThemeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUThemeCell.h; sourceTree = "<group>"; };
+		87984FCB1F620EAD008DEACD /* SUThemeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUThemeCell.m; sourceTree = "<group>"; };
+		87984FCD1F6213A7008DEACD /* SUThemeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUThemeVC.h; sourceTree = "<group>"; };
+		87984FCE1F6213A7008DEACD /* SUThemeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUThemeVC.m; sourceTree = "<group>"; };
+		87984FD01F62146A008DEACD /* SUThemeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUThemeItem.h; sourceTree = "<group>"; };
+		87984FD11F62146A008DEACD /* SUThemeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUThemeItem.m; sourceTree = "<group>"; };
 		87BD7A011F4BAC82007F53F0 /* SUYanXuan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SUYanXuan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87BD7A051F4BAC82007F53F0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		87BD7A071F4BAC82007F53F0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -395,6 +404,8 @@
 		87984F951F60B4E5008DEACD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				87984FCD1F6213A7008DEACD /* SUThemeVC.h */,
+				87984FCE1F6213A7008DEACD /* SUThemeVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -402,6 +413,8 @@
 		87984F961F60B4E5008DEACD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				87984FD01F62146A008DEACD /* SUThemeItem.h */,
+				87984FD11F62146A008DEACD /* SUThemeItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -409,6 +422,8 @@
 		87984F971F60B4E5008DEACD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				87984FCA1F620EAD008DEACD /* SUThemeCell.h */,
+				87984FCB1F620EAD008DEACD /* SUThemeCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -680,8 +695,10 @@
 				87984F5B1F5C7186008DEACD /* SUGoodsDetailImageView.m in Sources */,
 				87984F5E1F5C7AE7008DEACD /* SUImageManager.m in Sources */,
 				87984F851F6020DF008DEACD /* SUCartGoodsCell.m in Sources */,
+				87984FCF1F6213A7008DEACD /* SUThemeVC.m in Sources */,
 				8763CC871F51482000678B0B /* SUItem.m in Sources */,
 				8763CCB31F577B5E00678B0B /* SUGoodsDetailVC.m in Sources */,
+				87984FCC1F620EAD008DEACD /* SUThemeCell.m in Sources */,
 				8763CC981F516BAD00678B0B /* SUBrandManufactoryItem.m in Sources */,
 				87BD7A061F4BAC82007F53F0 /* main.m in Sources */,
 				87984F881F602BFF008DEACD /* SUCartVC.m in Sources */,
@@ -695,6 +712,7 @@
 				87BD7A291F4BB2D1007F53F0 /* ViewController.m in Sources */,
 				8763CCB01F563B4C00678B0B /* SUSmartRecommendView.m in Sources */,
 				87984FB21F60B850008DEACD /* SUProfileVC.m in Sources */,
+				87984FD21F62146A008DEACD /* SUThemeItem.m in Sources */,
 				87984F7E1F5F6AEE008DEACD /* SUCatagoriesTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

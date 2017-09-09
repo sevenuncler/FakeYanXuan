@@ -7,9 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface SUImageManager : NSCache
 
 + (instancetype)defaultImageManager;
+
+- (void)setImageView:(UIImageView *)imageView withUrl:(NSString *)url;
 
 @end
