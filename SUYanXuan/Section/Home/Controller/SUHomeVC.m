@@ -12,9 +12,9 @@
 #import "SULimitTimeVC.h"
 #import "SUCollectionViewCell.h"
 
-static CGFloat kWidth       = 50.f;
-static CGFloat kHeight      = 44.f;
-static CGFloat kLineHeight  = 2.f;
+static CGFloat const kWidth       = 50.f;
+static CGFloat const kHeight      = 44.f;
+static CGFloat const kLineHeight  = 2.f;
 static NSString * const reuseCollectionID = @"reuseCollectionCell";
 
 @interface SUHomeVC ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>

@@ -14,6 +14,8 @@
 #import "SUCartVC.h"
 #import "SUProfileVC.h"
 #import "SUThemeVC.h"
+#import "UIImage+Size.h"
+
 
 @interface AppDelegate ()
 
@@ -24,9 +26,70 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+
+    NSMutableArray *controllers = [NSMutableArray array];
     
-    UIViewController *vc = [[SUThemeVC alloc] init];
-    SUHomeNavigationVC *homeNavigationVC = [[SUHomeNavigationVC alloc] initWithRootViewController:vc];
+    {
+        UIViewController *vc = [[SUHomeVC alloc] init];
+        UITabBarItem *tabBarItem = [[UITabBarItem alloc] init];
+        tabBarItem.image = [[UIImage imageNamed:@"home_tab_normal"] imageWithSize:CGSizeMake(25, 25)];
+        tabBarItem.selectedImage = [[UIImage imageNamed:@"home_tab_selected"] imageWithSize:CGSizeMake(25, 25)];
+        tabBarItem.title = @"首页";
+        vc.tabBarItem = tabBarItem;
+        
+        UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:vc];
+        [controllers addObject:navi];
+    }
+    {
+        UIViewController *vc = [[SUThemeVC alloc] init];
+        UITabBarItem *tabBarItem = [[UITabBarItem alloc] init];
+        tabBarItem.image = [[UIImage imageNamed:@"theme_tab_normal"] imageWithSize:CGSizeMake(25, 25)];
+        tabBarItem.selectedImage = [[UIImage imageNamed:@"theme_tab_selected"] imageWithSize:CGSizeMake(25, 25)];
+        tabBarItem.title = @"专题";
+        vc.tabBarItem = tabBarItem;
+        
+        UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:vc];
+        [controllers addObject:navi];
+    }
+    {
+        UIViewController *vc = [[SUCatagoriesVC alloc] init];
+        UITabBarItem *tabBarItem = [[UITabBarItem alloc] init];
+        tabBarItem.image = [[UIImage imageNamed:@"cata_tab_normal"] imageWithSize:CGSizeMake(25, 25)];
+        tabBarItem.selectedImage = [[UIImage imageNamed:@"cata_tab_selected"] imageWithSize:CGSizeMake(25, 25)];
+        tabBarItem.title = @"分类";
+        vc.tabBarItem = tabBarItem;
+        
+        UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:vc];
+        [controllers addObject:navi];
+    }
+    {
+        UIViewController *vc = [[SUCartVC alloc] init];
+        UITabBarItem *tabBarItem = [[UITabBarItem alloc] init];
+        tabBarItem.image = [[UIImage imageNamed:@"cart_tab_normal"] imageWithSize:CGSizeMake(25, 25)];
+        tabBarItem.selectedImage = [[UIImage imageNamed:@"cart_tab_selected"] imageWithSize:CGSizeMake(25, 25)];
+        tabBarItem.title = @"专题";
+        vc.tabBarItem = tabBarItem;
+        
+        UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:vc];
+        [controllers addObject:navi];
+    }
+    {
+        UIViewController *vc = [[SUProfileVC alloc] init];
+        UITabBarItem *tabBarItem = [[UITabBarItem alloc] init];
+        tabBarItem.image = [[UIImage imageNamed:@"prof_tab_normal"] imageWithSize:CGSizeMake(25, 25)];
+        tabBarItem.selectedImage = [[UIImage imageNamed:@"prof_tab_selected"] imageWithSize:CGSizeMake(25, 25)];
+        tabBarItem.title = @"个人";
+        vc.tabBarItem = tabBarItem;
+        
+        UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:vc];
+        [controllers addObject:navi];
+    }
+
+    
+    UITabBarController *tabBarConroller = [[UITabBarController alloc] init];
+    tabBarConroller.viewControllers = controllers.copy;
+    tabBarConroller.view.tintColor = [UIColor colorWithRed:0.8 green:0 blue:0 alpha:1];
+    SUHomeNavigationVC *homeNavigationVC = [[SUHomeNavigationVC alloc] initWithRootViewController:tabBarConroller];
     self.window.rootViewController = homeNavigationVC;
     [self.window makeKeyAndVisible];
     return YES;
